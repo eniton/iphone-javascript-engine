@@ -131,7 +131,6 @@
 		BB10C1371174E5DF0032907B /* ProfileNode.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10BAF31174E5DE0032907B /* ProfileNode.h */; };
 		BB10C1381174E5DF0032907B /* Profiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB10BAF41174E5DE0032907B /* Profiler.cpp */; };
 		BB10C1391174E5DF0032907B /* Profiler.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10BAF51174E5DE0032907B /* Profiler.h */; };
-		BB10C13A1174E5DF0032907B /* ProfilerServer.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10BAF61174E5DE0032907B /* ProfilerServer.h */; };
 		BB10C13C1174E5DF0032907B /* TreeProfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB10BAF81174E5DE0032907B /* TreeProfile.cpp */; };
 		BB10C13D1174E5DF0032907B /* TreeProfile.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10BAF91174E5DE0032907B /* TreeProfile.h */; };
 		BB10C13E1174E5DF0032907B /* ArgList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB10BAFB1174E5DE0032907B /* ArgList.cpp */; };
@@ -382,6 +381,8 @@
 		BB10C6C51174E5DF0032907B /* UnusedParam.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0E91174E5DF0032907B /* UnusedParam.h */; };
 		BB10C6C61174E5DF0032907B /* Vector.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0EA1174E5DF0032907B /* Vector.h */; };
 		BB10C6C71174E5DF0032907B /* VectorTraits.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0EB1174E5DF0032907B /* VectorTraits.h */; };
+		BBAAC3801174FFEE008B5C69 /* ProfilerServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB10BAF71174E5DE0032907B /* ProfilerServer.mm */; };
+		BBAAC3811174FFEF008B5C69 /* ProfilerServer.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10BAF61174E5DE0032907B /* ProfilerServer.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1542,7 +1543,6 @@
 				BB10C1351174E5DF0032907B /* ProfileGenerator.h in Headers */,
 				BB10C1371174E5DF0032907B /* ProfileNode.h in Headers */,
 				BB10C1391174E5DF0032907B /* Profiler.h in Headers */,
-				BB10C13A1174E5DF0032907B /* ProfilerServer.h in Headers */,
 				BB10C13D1174E5DF0032907B /* TreeProfile.h in Headers */,
 				BB10C13F1174E5DF0032907B /* ArgList.h in Headers */,
 				BB10C1411174E5DF0032907B /* Arguments.h in Headers */,
@@ -1694,6 +1694,7 @@
 				BB10C6C51174E5DF0032907B /* UnusedParam.h in Headers */,
 				BB10C6C61174E5DF0032907B /* Vector.h in Headers */,
 				BB10C6C71174E5DF0032907B /* VectorTraits.h in Headers */,
+				BBAAC3811174FFEF008B5C69 /* ProfilerServer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1919,6 +1920,7 @@
 				BB10C6BE1174E5DF0032907B /* CollatorDefault.cpp in Sources */,
 				BB10C6BF1174E5DF0032907B /* CollatorICU.cpp in Sources */,
 				BB10C6C31174E5DF0032907B /* UTF8.cpp in Sources */,
+				BBAAC3801174FFEE008B5C69 /* ProfilerServer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
