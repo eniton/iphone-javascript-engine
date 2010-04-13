@@ -1,0 +1,3 @@
+build/*
+JSEngine.xcodeproj/*.mode1v3
+JSEngine.xcodeproj/*.pbxuser
