@@ -352,7 +352,9 @@ void* JSObjectGetPrivate(JSObjectRef object)
         return static_cast<JSCallbackObject<JSGlobalObject>*>(jsObject)->getPrivate();
     else if (jsObject->inherits(&JSCallbackObject<JSObject>::info))
         return static_cast<JSCallbackObject<JSObject>*>(jsObject)->getPrivate();
-    
+	else if (jsObject->inherits(&JSCallbackConstructor::info))
+ 	 	return static_cast<JSCallbackConstructor*>(jsObject)->getPrivate();
+
     return 0;
 }
 

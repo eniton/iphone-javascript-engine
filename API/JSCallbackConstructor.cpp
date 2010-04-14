@@ -76,4 +76,12 @@ ConstructType JSCallbackConstructor::getConstructData(ConstructData& constructDa
     return ConstructTypeHost;
 }
 
+void JSCallbackConstructor::setPrivate(void* data) {
+	privateData = data;
+}
+
+void* JSCallbackConstructor::getPrivate() {
+	return privateData;
+}
+
 } // namespace JSC
