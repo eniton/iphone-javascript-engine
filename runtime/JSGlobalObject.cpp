@@ -212,8 +212,8 @@ void JSGlobalObject::reset(JSValuePtr prototype)
     d()->functionStructure = JSFunction::createStructure(d()->functionPrototype);
     d()->callbackFunctionStructure = JSCallbackFunction::createStructure(d()->functionPrototype);
     d()->argumentsStructure = Arguments::createStructure(d()->objectPrototype);
-    d()->callbackConstructorStructure = JSCallbackConstructor::createStructure(d()->objectPrototype);
-    d()->callbackObjectStructure = JSCallbackObject<JSObject>::createStructure(d()->objectPrototype);
+    d()->callbackConstructorStructure = JSCallbackConstructor::createStructure(d()->functionPrototype);
+    d()->callbackObjectStructure = JSCallbackObject<JSObject>::createStructure(d()->functionPrototype);
 
     d()->arrayPrototype = new (exec) ArrayPrototype(ArrayPrototype::createStructure(d()->objectPrototype));
     d()->arrayStructure = JSArray::createStructure(d()->arrayPrototype);
