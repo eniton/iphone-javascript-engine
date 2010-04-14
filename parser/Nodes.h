@@ -35,11 +35,11 @@
 #include <wtf/OwnPtr.h>
 #include <wtf/Vector.h>
 
-#if PLATFORM(X86) && COMPILER(GCC)
-#define JSC_FAST_CALL __attribute__((regparm(3)))
-#else
+//#if PLATFORM(X86) && COMPILER(GCC)
+//#define JSC_FAST_CALL __attribute__((regparm(3)))
+//#else
 #define JSC_FAST_CALL
-#endif
+//#endif
 
 namespace JSC {
 
