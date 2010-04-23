@@ -185,7 +185,6 @@
 		BB10C68D1174E5DF0032907B /* HashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB10C0AB1174E5DF0032907B /* HashTable.cpp */; };
 		BB10C68E1174E5DF0032907B /* HashTable.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0AC1174E5DF0032907B /* HashTable.h */; };
 		BB10C68F1174E5DF0032907B /* HashTraits.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0AD1174E5DF0032907B /* HashTraits.h */; };
-		BB10C6901174E5DF0032907B /* MainThreadIPhone.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB10C0AF1174E5DF0032907B /* MainThreadIPhone.mm */; };
 		BB10C6911174E5DF0032907B /* ThreadingNSThread.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB10C0B01174E5DF0032907B /* ThreadingNSThread.mm */; };
 		BB10C6921174E5DF0032907B /* ListHashSet.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0B11174E5DF0032907B /* ListHashSet.h */; };
 		BB10C6931174E5DF0032907B /* ListRefPtr.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0B21174E5DF0032907B /* ListRefPtr.h */; };
@@ -230,6 +229,7 @@
 		BB10C6C51174E5DF0032907B /* UnusedParam.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0E91174E5DF0032907B /* UnusedParam.h */; };
 		BB10C6C61174E5DF0032907B /* Vector.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0EA1174E5DF0032907B /* Vector.h */; };
 		BB10C6C71174E5DF0032907B /* VectorTraits.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10C0EB1174E5DF0032907B /* VectorTraits.h */; };
+		BB6C07D8117885A700A668E4 /* MainThreadIPhone.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB10C0AF1174E5DF0032907B /* MainThreadIPhone.mm */; };
 		BBAAC3801174FFEE008B5C69 /* ProfilerServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB10BAF71174E5DE0032907B /* ProfilerServer.mm */; };
 		BBAAC3811174FFEF008B5C69 /* ProfilerServer.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10BAF61174E5DE0032907B /* ProfilerServer.h */; };
 		BBD7384F11750F9C0095BDE2 /* NodeInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = BB10BAD41174E5DE0032907B /* NodeInfo.h */; };
@@ -1621,7 +1621,6 @@
 				BB10C6791174E5DF0032907B /* ByteArray.cpp in Sources */,
 				BB10C67B1174E5DF0032907B /* CurrentTime.cpp in Sources */,
 				BB10C68D1174E5DF0032907B /* HashTable.cpp in Sources */,
-				BB10C6901174E5DF0032907B /* MainThreadIPhone.mm in Sources */,
 				BB10C6911174E5DF0032907B /* ThreadingNSThread.mm in Sources */,
 				BB10C6961174E5DF0032907B /* MainThread.cpp in Sources */,
 				BB10C6A41174E5DF0032907B /* RandomNumber.cpp in Sources */,
@@ -1633,6 +1632,7 @@
 				BB10C6C31174E5DF0032907B /* UTF8.cpp in Sources */,
 				BBAAC3801174FFEE008B5C69 /* ProfilerServer.mm in Sources */,
 				BB04D5651176034400CB5C05 /* AllInOneFile.cpp in Sources */,
+				BB6C07D8117885A700A668E4 /* MainThreadIPhone.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1651,16 +1651,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/JSEngine.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_OBJC_CALL_CXX_CDTORS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = JSEngine_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = "IPHONE_EMBEDDED=1";
+				GCC_STRICT_ALIASING = YES;
+				GCC_THREADSAFE_STATICS = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"${BUILT_PRODUCTS_DIR}/DerivedSources/JavaScriptCore\"",
 					icu,
@@ -1670,6 +1677,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = JSEngine;
+				SDKROOT = iphoneos3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -1678,9 +1686,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				DSTROOT = /tmp/JSEngine.dst;
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_SSE42_EXTENSIONS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_MODEL_TUNING = G5;
+				GCC_OBJC_CALL_CXX_CDTORS = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = JSEngine_Prefix.pch;
@@ -1688,13 +1701,18 @@
 					"NDEBUG=1",
 					"IPHONE_EMBEDDED=1",
 				);
+				GCC_STRICT_ALIASING = YES;
+				GCC_THREADSAFE_STATICS = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"${BUILT_PRODUCTS_DIR}/DerivedSources/JavaScriptCore\"",
 					icu,
 					.,
 				);
 				INSTALL_PATH = /usr/local/lib;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = JSEngine;
+				SDKROOT = iphoneos3.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;

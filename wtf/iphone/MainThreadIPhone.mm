@@ -32,12 +32,12 @@
 #import "Threading.h"
 #import <Foundation/NSThread.h>
 
-@interface WTFMainThreadCaller : NSObject {
+@interface WTFMainThreadCaller2 : NSObject {
 }
 - (void)call;
 @end
 
-@implementation WTFMainThreadCaller
+@implementation WTFMainThreadCaller2
 
 - (void)call
 {
@@ -50,7 +50,7 @@ namespace WTF {
 
 void scheduleDispatchFunctionsOnMainThread()
 {
-    WTFMainThreadCaller *caller = [[WTFMainThreadCaller alloc] init];
+    WTFMainThreadCaller2 *caller = [[WTFMainThreadCaller2 alloc] init];
     [caller performSelector:@selector(call) onThread:mainNSThread() withObject:nil waitUntilDone:NO];
     [caller release];
 }
